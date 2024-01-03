@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67711dd2849111041901a755ce004362, type: 3}
+  m_Name: Shark
+  m_EditorClassIdentifier: 
+  FishType: Shark
+  Icon: {fileID: 21300000, guid: 71168940933183b41a119c710dcc2680, type: 3}
+  FishSize: 90
+  FishWeight: 85
+  Depth: 50
+  Rariety: Rare
+  SellPrice: 88
+  Description: When you see the fin in the water you know what is coming. Aggressive
+    and dangerous but sells for a good amount of money.
+  isCaught: 0

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67711dd2849111041901a755ce004362, type: 3}
+  m_Name: BloodShark
+  m_EditorClassIdentifier: 
+  FishType: Blood Shark
+  Icon: {fileID: 21300000, guid: 42d754aaa178cb640a2ccd69f3b7c2a2, type: 3}
+  FishSize: 125
+  FishWeight: 115
+  Depth: 50
+  Rariety: Epic
+  SellPrice: 210
+  Description: 'A shark that is said to have been bathed in blood so much that it''s
+    body is now stained red. '
+  isCaught: 0

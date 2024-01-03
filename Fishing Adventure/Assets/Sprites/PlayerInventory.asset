@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b4418454825674a82b2dc243abab13, type: 3}
+  m_Name: PlayerInventory
+  m_EditorClassIdentifier: 
+  playerName: Player Name
+  playerMoney: 2602
+  HookStrength: 0.8
+  hookDepth: 5
+  maxFish: 5
+  count: 0
+  inventoryFull: 0
+  inventoryUpgradeCost: 200
+  depthUpgradeCost: 45
+  hookUpgradeCost: 55
+  dockUpgradeCost: 115
+  dockUpgraded: 0
+  strengthLevel: 0
+  inventoryLevel: 0
+  depthLevel: 0
+  fishFound:
+  - {fileID: 0}
+  displayFish:
+  - {fileID: 0}
+  fish:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fishLengthHolder:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  fishJournal: 000000000000000000000000000000000000000000000000000000
+  allFishJournal:
+  - {fileID: 11400000, guid: f12be5518188a2742a8ebbae5a70e6c0, type: 2}
+  - {fileID: 11400000, guid: 573d2126236448049a674cf43a96f0b2, type: 2}
+  - {fileID: 11400000, guid: 2c09b8835ba20ac43bc2b30cfb1f9124, type: 2}
+  - {fileID: 11400000, guid: ab61d134f6a251a438081517b47ade29, type: 2}
+  - {fileID: 11400000, guid: 8a9fd6830159aca49b0ee50bca1cb6e5, type: 2}
+  - {fileID: 11400000, guid: b6e30839eeb43e64f9f9c3a864b785a0, type: 2}
+  - {fileID: 11400000, guid: 993331b76fa9ef44fa2be74da55f93bc, type: 2}
+  - {fileID: 11400000, guid: 80958acd1dcff094c93ff77c04e48942, type: 2}
+  - {fileID: 11400000, guid: 4c17431665874794f833ef62a3b16afd, type: 2}
+  - {fileID: 11400000, guid: 777603352d8d8e647a4afdad0da9f6d7, type: 2}
+  - {fileID: 11400000, guid: 00e1e257ac28a564b84cd41f9eff6e12, type: 2}
+  - {fileID: 11400000, guid: 66211eaa93e21f5448324e5f74eda058, type: 2}
+  - {fileID: 11400000, guid: 640bc6cc013d4f342b8001e0e767787f, type: 2}
+  - {fileID: 11400000, guid: f60e658864c23924a8c73074bec4d15a, type: 2}
+  - {fileID: 11400000, guid: 3a02d206ee4de2c46808140c877c58c7, type: 2}
+  - {fileID: 11400000, guid: 669d532052c95c4478ff6f5f5b393db4, type: 2}
+  - {fileID: 11400000, guid: cff77d70730b43f4daa57a32565cfc57, type: 2}
+  - {fileID: 11400000, guid: f4e11f6f63d1cc54e911589c8e979e77, type: 2}
+  - {fileID: 11400000, guid: 53019f8f5cd7cfb4197cb14d84c7b01e, type: 2}
+  - {fileID: 11400000, guid: 7cdaa82aa1f4a95488e4d197ad4396b8, type: 2}
+  - {fileID: 11400000, guid: 3bf87649e78d9104b95b6822330c8f5d, type: 2}
+  - {fileID: 11400000, guid: dab0c2f3abbfe8c4793ef2f4744d1217, type: 2}
+  - {fileID: 11400000, guid: 563faa87783ed4f40bf4cf89eb4cc4a5, type: 2}
+  - {fileID: 11400000, guid: 6fc38a9afa754d9488a0288939e0136c, type: 2}
+  - {fileID: 11400000, guid: 57aa6dd480e32cd48a344d1dd92dee89, type: 2}
+  - {fileID: 11400000, guid: aec2d171a9668e64cae0269bd6106e46, type: 2}
+  - {fileID: 11400000, guid: 98a95b69f024784439ef2e24a3a349d7, type: 2}
+  - {fileID: 11400000, guid: 0a3a837b21824f0469f785d15a771a62, type: 2}
+  CountFish: 0
+  QuestActive: 0
+  QuestComplete: 0
+  SpikedHook: 0
+  PirateQuest: 0
+  CaughtSpirit: 0
+  BoatUpgrade: 0
+  boatFuel: 0
+  highered: 0
+  workerLevel: 1
+  workerUpgradeCost: 375
+  totalCatches: 0
+  totalExcapes: 0
+  totalMoney: 0
+  musicVolume: 0.22097562
+  gameSound: 1

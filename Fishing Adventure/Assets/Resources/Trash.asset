@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67711dd2849111041901a755ce004362, type: 3}
+  m_Name: Trash
+  m_EditorClassIdentifier: 
+  FishType: Trash
+  Icon: {fileID: 21300000, guid: 7ea70f1b99a2ca84da4fb1f428a0911f, type: 3}
+  FishSize: 16
+  FishWeight: 2
+  Depth: 5
+  Rariety: Common
+  SellPrice: 2
+  Description: A large bag of garbage. I doubt it will sell for that much.
+  isCaught: 0

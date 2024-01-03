@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67711dd2849111041901a755ce004362, type: 3}
+  m_Name: SwordFish
+  m_EditorClassIdentifier: 
+  FishType: Swordfish
+  Icon: {fileID: 21300000, guid: 23b2aa05e1237cd4db1cac0b1cd9b993, type: 3}
+  FishSize: 50
+  FishWeight: 20
+  Depth: 50
+  Rariety: Uncommon
+  SellPrice: 55
+  Description: A fish that will try to duel with anyone. It's sword is said to be
+    as sharp as a needle.
+  isCaught: 0

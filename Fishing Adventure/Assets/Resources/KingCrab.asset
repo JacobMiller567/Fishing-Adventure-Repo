@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67711dd2849111041901a755ce004362, type: 3}
+  m_Name: KingCrab
+  m_EditorClassIdentifier: 
+  FishType: King Crab
+  Icon: {fileID: 21300000, guid: e7524efc2bf158f489bed86ce59ce044, type: 3}
+  FishSize: 16
+  FishWeight: 1
+  Depth: 20
+  Rariety: Epic
+  SellPrice: 75
+  Description: The king of all crustaceans. It rules the ocean with it's iron claw.
+  isCaught: 0

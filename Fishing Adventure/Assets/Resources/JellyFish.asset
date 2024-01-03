@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67711dd2849111041901a755ce004362, type: 3}
+  m_Name: JellyFish
+  m_EditorClassIdentifier: 
+  FishType: Jellyfish
+  Icon: {fileID: 21300000, guid: 1d354c6d323a65649bb0a450ec2acf66, type: 3}
+  FishSize: 36
+  FishWeight: 0.7
+  Depth: 40
+  Rariety: Common
+  SellPrice: 35
+  Description: This alien looking fish has no bones in it's body and produces quite
+    the shock when touched.
+  isCaught: 0

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67711dd2849111041901a755ce004362, type: 3}
+  m_Name: AnglerFish
+  m_EditorClassIdentifier: 
+  FishType: Anglerfish
+  Icon: {fileID: 21300000, guid: 3abffd5cd407ee345964ff2bba087dc7, type: 3}
+  FishSize: 55
+  FishWeight: 30
+  Depth: 75
+  Rariety: Rare
+  SellPrice: 135
+  Description: This fish uses it's light to hypnotize prey before swallowing them
+    whole.
+  isCaught: 0

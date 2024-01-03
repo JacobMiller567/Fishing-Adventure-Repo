@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67711dd2849111041901a755ce004362, type: 3}
+  m_Name: SeaSerpent
+  m_EditorClassIdentifier: 
+  FishType: Sea Serpent
+  Icon: {fileID: 21300000, guid: 7404c8fc7885ccd4f8322bc8ce26d13b, type: 3}
+  FishSize: 240
+  FishWeight: 350
+  Depth: 100
+  Rariety: Legendary
+  SellPrice: 850
+  Description: 'A legendary serpent that is said to live deep in the ocean waters.
+    It is believed to be the cause of all the tremors in the ocean. '
+  isCaught: 0
