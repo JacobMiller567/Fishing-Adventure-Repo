@@ -7,14 +7,7 @@ public class WorkerUpgradeUI : MonoBehaviour
 {
     [SerializeField] private PlayerInventory inventory;
     [SerializeField] TextMeshProUGUI upgradeText;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (inventory.workerLevel < 5)

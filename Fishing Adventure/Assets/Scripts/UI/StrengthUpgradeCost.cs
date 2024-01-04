@@ -10,11 +10,6 @@ public class StrengthUpgradeCost : MonoBehaviour
 
     private float upgradeCost;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (inventory.HookStrength < 3f)

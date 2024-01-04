@@ -10,7 +10,6 @@ public class PirateNPC : MonoBehaviour
     [SerializeField] private GameObject QuestHolder;
     [SerializeField] private PlayerInventory inventory;
     [SerializeField] private GameObject dialogue;
-    //[SerializeField] private GameObject dialogueComplete;
 
     private bool ActiveQuest = false;
     [SerializeField] TextMeshProUGUI questText;
@@ -21,7 +20,7 @@ public class PirateNPC : MonoBehaviour
   
     void Start()
     {
-        ActiveQuest = inventory.PirateQuest;//inventory.QuestActive;
+        ActiveQuest = inventory.PirateQuest;
         updateQuest = true;
         questFinished = inventory.CaughtSpirit;
 
@@ -52,26 +51,18 @@ public class PirateNPC : MonoBehaviour
 
         if (inventory.PirateQuest == true && updateQuest == true)
         {
-
-            //quests.Add(questDialogue);
             questText.text = quest2;
             updateQuest = false;
         }
 
 
-
-         if (inventory.CaughtSpirit == true)
+        if (inventory.CaughtSpirit == true)
         {
             
             if ((player.position - transform.position).magnitude < 3f)
             {
-               // dialogueComplete.SetActive(true);
-
                 if (inventory.PirateQuest == true)
                 {
-                    // Reward:
-                        // $1400
-                        // Faster boat speed 1.5 --> 2.25
                     inventory.playerMoney += 1400f;
                     inventory.totalMoney += 1400f;
                     inventory.PirateQuest = false;
@@ -81,12 +72,6 @@ public class PirateNPC : MonoBehaviour
                 }
 
             }
-
-            else
-            {
-               // dialogueComplete.SetActive(false);
-
-            }
         }
 
         if (ActiveQuest != true)
@@ -94,7 +79,5 @@ public class PirateNPC : MonoBehaviour
             QuestHolder.SetActive(false);
         } 
     }
-
-
 
 }

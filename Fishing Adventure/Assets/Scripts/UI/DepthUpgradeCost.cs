@@ -10,16 +10,11 @@ public class DepthUpgradeCost : MonoBehaviour
 
     private float upgradeCost;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (inventory.hookDepth < 100f)
         {
-            upgradeText.text = "$" + inventory.depthUpgradeCost.ToString(); //+" ("+inventory.hookDepth.ToString()+")";
+            upgradeText.text = "$" + inventory.depthUpgradeCost.ToString();
         }
         else
         {

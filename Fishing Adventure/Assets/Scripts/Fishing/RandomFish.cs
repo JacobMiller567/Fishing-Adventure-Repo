@@ -9,29 +9,17 @@ public class RandomFish: MonoBehaviour
    public PlayerInventory inventory;
    public GameObject inventoryFull;
    private bool isFull;
-   //[SerializeField] TextMeshProUGUI fullText;
-   
-
-
 
    public void FindRandomFish(float depth)
    {
 
-       if (inventory.fish[inventory.maxFish - 1] != null) // check if last slot has a fish
+       if (inventory.fish[inventory.maxFish - 1] != null) 
         {
             Debug.Log("Inventory Is FULL");
-          //  inventoryFull.SetActive(true);
-          //  fullText.text = "Inventory Full";
-         //   isFull = true;
             return;
         }
 
-       // inventoryFull.SetActive(false);
-        //fullText.text = " ";
-
-     //   isFull = false;
-    
-        if (depth <= 5) // Depth of 5
+        if (depth <= 5) 
         {
             float chooseFish = Random.Range(0, 7);
             if (chooseFish <= 2) // 43% 
@@ -52,20 +40,20 @@ public class RandomFish: MonoBehaviour
             }
         }
 
-        if (depth > 5 && depth <= 10) // Depth of 10
+        if (depth > 5 && depth <= 10) 
         {
             float chooseFish = Random.Range(0, 100);
             if (chooseFish <= 30) // 30%
             {
-                inventory.fishFound = Resources.LoadAll("GrayFish");  //SeaSpirit
+                inventory.fishFound = Resources.LoadAll("GrayFish");  
             }
             else if (chooseFish > 30 && chooseFish <= 55) // 25%
             {
-                inventory.fishFound = Resources.LoadAll("BlueFish");//  BlueFish
+                inventory.fishFound = Resources.LoadAll("BlueFish");
             }
             else if (chooseFish > 55 && chooseFish <= 75) // 20%
             {
-                inventory.fishFound = Resources.LoadAll("RedFish"); //  RedFish
+                inventory.fishFound = Resources.LoadAll("RedFish"); 
             }
 
             else if (chooseFish > 75 && chooseFish <= 90) // 15%
@@ -78,7 +66,7 @@ public class RandomFish: MonoBehaviour
             }
         }
 
-        if (depth >= 15 && depth < 25) // Depth of 15 - 20
+        if (depth >= 15 && depth < 25) 
         {
             float chooseFish = Random.Range(0, 100);
             if (chooseFish <= 24) // 25%
@@ -107,9 +95,7 @@ public class RandomFish: MonoBehaviour
             }
         }
 
-
-
-         if (depth >= 25 && depth < 35) // Depth of 25 - 30
+         if (depth >= 25 && depth < 35)
          {
             float chooseFish = Random.Range(0, 100);
             if (chooseFish <= 24) // 25%
@@ -142,7 +128,7 @@ public class RandomFish: MonoBehaviour
             }
         }
 
-        if (depth >= 35 && depth < 45) // Depth of 35 - 40
+        if (depth >= 35 && depth < 45)
          {
             float chooseFish = Random.Range(0, 100);
             if (chooseFish <= 15) // 16%
@@ -176,7 +162,7 @@ public class RandomFish: MonoBehaviour
            
         }
 
-         if (depth >= 45 && depth < 55) // Depth of 45 - 50
+         if (depth >= 45 && depth < 55) 
          {
             float chooseFish = Random.Range(0, 100);
 
@@ -210,7 +196,7 @@ public class RandomFish: MonoBehaviour
             }
         }
 
-        if (depth >= 55 && depth < 65) // Depth of 55 - 60
+        if (depth >= 55 && depth < 65) 
         {
             float chooseFish = Random.Range(0, 100);
 
@@ -244,7 +230,7 @@ public class RandomFish: MonoBehaviour
             }
         }
 
-        if (depth >= 65 && depth < 75) // Depth of 65 - 70
+        if (depth >= 65 && depth < 75) 
         {
             float chooseFish = Random.Range(0, 100);
 
@@ -282,7 +268,7 @@ public class RandomFish: MonoBehaviour
             }
         }
 
-        if (depth >= 75 && depth < 85) // Depth of 75 - 80
+        if (depth >= 75 && depth < 85) 
         {
             float chooseFish = Random.Range(0, 100);
 
@@ -316,7 +302,7 @@ public class RandomFish: MonoBehaviour
             }
         }
 
-        if (depth >= 85 && depth < 95) // Depth of 85 - 90
+        if (depth >= 85 && depth < 95) 
         {
             float chooseFish = Random.Range(0, 100);
 
@@ -355,7 +341,7 @@ public class RandomFish: MonoBehaviour
 
         }
 
-        if (depth >= 95 && depth < 105) // Depth of 95 - 100
+        if (depth >= 95 && depth < 105) 
         {
             float chooseFish = Random.Range(0, 100);
 
@@ -397,15 +383,8 @@ public class RandomFish: MonoBehaviour
             }
         }
 
-        inventory.fishFound.CopyTo(inventory.displayFish, 0); // keep replacing first item in array
-       // inventory.displayFish[0].FishLength = "Small";
-        Debug.Log("Fish on line: " + inventory.displayFish[0].FishType);
-        Debug.Log("Fish Rariety: " + inventory.displayFish[0].Rariety);
-
+        inventory.fishFound.CopyTo(inventory.displayFish, 0); 
    }
-
-
-
 
 }
 

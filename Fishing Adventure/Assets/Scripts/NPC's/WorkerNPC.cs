@@ -13,12 +13,7 @@ public class WorkerNPC : MonoBehaviour
     public float workPrice = 250f;
     private bool working = false;
     public float income = 6f;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         incomeText.text = "$" + income.ToString() + "/min";
@@ -50,25 +45,15 @@ public class WorkerNPC : MonoBehaviour
         {
             income = 40f;
         }
-    /*
-        // Level Max: $60 a minute --> $3600 an hour
-        if (inventory.workerLevel == 5)
-        {
-            income = 60f;
-        }
-    */
-    
 
-        if ((player.position - transform.position).magnitude < 0.35f && inventory.highered) //&& inventory.QuestComplete == true) // if player has finished basic catching quest
+        if ((player.position - transform.position).magnitude < 0.35f && inventory.highered) 
         {
-            // Higher button
             image.SetActive(true);
         }
         else
         {
             image.SetActive(false);
-        }
-       
+        } 
 
         if (inventory.highered && working == false)
         {

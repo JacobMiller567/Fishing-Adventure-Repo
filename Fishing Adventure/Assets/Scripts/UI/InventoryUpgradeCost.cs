@@ -10,11 +10,6 @@ public class InventoryUpgradeCost : MonoBehaviour
 
     private float upgradeCost;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (inventory.inventoryLevel < 3)

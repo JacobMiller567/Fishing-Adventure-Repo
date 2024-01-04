@@ -8,11 +8,8 @@ public class JournalIcon : MonoBehaviour
 {
     public PlayerInventory inventory;
     public Image[] icons;
-    //public Sprite[] picture; // not needed
 
-    //public void UpdateFishIcon(Image[] icons)
-    //public void UpdateFishIcon()
-    void Update() // CHNAGE so it doesn't always update
+    void Update() 
     {
         if (inventory.fishJournal[0] == true)
         {
@@ -122,7 +119,5 @@ public class JournalIcon : MonoBehaviour
         {
             icons[26].sprite = inventory.allFishJournal[26].Icon;
         }
-
-
     }
 }

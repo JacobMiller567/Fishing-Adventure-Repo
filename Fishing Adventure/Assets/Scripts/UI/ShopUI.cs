@@ -12,7 +12,6 @@ public class ShopUI : MonoBehaviour
 
     public void Shop()
     {
-        //SceneManager.LoadScene("Shop");
         shopMenu.SetActive(true);
     }
 
@@ -21,12 +20,11 @@ public class ShopUI : MonoBehaviour
         if (inventoryUpgrades.playerMoney >= inventoryUpgrades.inventoryUpgradeCost && inventoryUpgrades.inventoryLevel < 3) 
         {
             inventoryUpgrades.playerMoney -= inventoryUpgrades.inventoryUpgradeCost;
-            inventoryUpgrades.maxFish += 5; // increase fish amount
+            inventoryUpgrades.maxFish += 5; 
             
-            //if (inventoryLevel <= 3)
-            inventoryUpgrades.inventoryUpgradeCost = inventoryUpgrades.inventoryUpgradeCost * 5; // Max Level: $5000
+            inventoryUpgrades.inventoryUpgradeCost = inventoryUpgrades.inventoryUpgradeCost * 5; 
             inventoryUpgrades.inventoryLevel += 1;
-            inventoryUpgrades.IncreaseInventory(); // increase inventory size
+            inventoryUpgrades.IncreaseInventory(); 
             
         }
         else
@@ -43,15 +41,15 @@ public class ShopUI : MonoBehaviour
         {
             inventoryUpgrades.playerMoney -= inventoryUpgrades.depthUpgradeCost;
             inventoryUpgrades.depthLevel += 1;
-            if (inventoryUpgrades.depthLevel <= 1) // first depth upgrade
+            if (inventoryUpgrades.depthLevel <= 1) 
             {
-                inventoryUpgrades.hookDepth += 5f; // 10f
-                inventoryUpgrades.depthUpgradeCost = Mathf.Round(inventoryUpgrades.depthUpgradeCost * 1.5f); // 2f
+                inventoryUpgrades.hookDepth += 5f; 
+                inventoryUpgrades.depthUpgradeCost = Mathf.Round(inventoryUpgrades.depthUpgradeCost * 1.5f); 
             }
-            else // after first depth upgrade
+            else
             {
                 inventoryUpgrades.hookDepth += 10f; 
-                inventoryUpgrades.depthUpgradeCost = Mathf.Round(inventoryUpgrades.depthUpgradeCost * 2f); // 2f
+                inventoryUpgrades.depthUpgradeCost = Mathf.Round(inventoryUpgrades.depthUpgradeCost * 2f); 
             }
         }
         else
@@ -80,8 +78,6 @@ public class ShopUI : MonoBehaviour
         if (inventoryUpgrades.playerMoney >= inventoryUpgrades.dockUpgradeCost && inventoryUpgrades.dockUpgraded != true)
         {
             inventoryUpgrades.playerMoney -= inventoryUpgrades.dockUpgradeCost;
-            //inventoryUpgrades.HookStrength += .1f;
-            //inventoryUpgrades.hookUpgradeCost = inventoryUpgrades.hookUpgradeCost * 2;
             inventoryUpgrades.dockUpgraded = true;
         }
 
@@ -105,7 +101,6 @@ public class ShopUI : MonoBehaviour
             inventoryUpgrades.workerUpgradeCost = Mathf.Round(inventoryUpgrades.workerUpgradeCost * 1.5f); 
             inventoryUpgrades.workerLevel += 1;
         }
-
         else
         {
             Debug.Log("Not enough money for worker upgrade");

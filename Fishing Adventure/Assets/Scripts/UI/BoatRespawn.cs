@@ -26,9 +26,8 @@ public class BoatRespawn : MonoBehaviour
                 canTow = false;
                 boatLocation = new Vector3(-4.146f, -0.029f, 0f);
                 boat.position = boatLocation;
-                inventory.playerMoney -= 45f; // costs $45 to have bow towed
+                inventory.playerMoney -= 45f; 
                 StartCoroutine(BoatCoolDown());
-
             }
         }
         else

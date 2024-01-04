@@ -10,14 +10,8 @@ public class DockExpansion : MonoBehaviour
 
     private float upgradeCost;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-
         if (inventory.dockUpgraded == true)
         {
             upgradeText.text = "Max Level";
@@ -26,6 +20,5 @@ public class DockExpansion : MonoBehaviour
         {
             upgradeText.text = "$" + inventory.dockUpgradeCost.ToString();
         }
-
     }
 }

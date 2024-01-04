@@ -18,16 +18,13 @@ public class NPC : MonoBehaviour
     public bool updateQuest;
 
     // Quest Reward: 0% chance fish takes your bait and leaves
-    //public string questDialogue = "If you can prove that you are a good fisherman by catching 20 fish, then I will teach you a new fishing technique"; 
     public string quest1 = "Catch 20 Fish";
-    // Reward 2?: Fisherman NPC will catch fish for you over time
 
     public void Start()
     {
-        FishCounter = inventory.CountFish; // get saved fish count
+        FishCounter = inventory.CountFish; 
         updateQuest = true;
         ActiveQuest = inventory.QuestActive;
-        //ActiveQuest = inventory.QuestActive;
 
         if (ActiveQuest != true)
         {
@@ -49,15 +46,11 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            //Interact.SetActive(false);
             dialogue.SetActive(false);
-
         }
 
         if (inventory.QuestActive == true && updateQuest == true)
         {
-
-            //quests.Add(questDialogue);
             questText.text = quest1 + ": " + FishCounter.ToString() + "/20";
             updateQuest = false;
         }
@@ -82,12 +75,10 @@ public class NPC : MonoBehaviour
                     inventory.QuestActive = false;
                     ActiveQuest = false;
                 }
-
             }
             else
             {
                 dialogueComplete.SetActive(false);
-
             }
         }
 

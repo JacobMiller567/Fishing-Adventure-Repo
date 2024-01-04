@@ -7,22 +7,10 @@ using TMPro;
 public class PlayerName : MonoBehaviour
 {
    [SerializeField] private PlayerInventory inventory;
-    public new TMP_InputField name; // added new so warning would go away
+    public new TMP_InputField name;
 
-    // Update is called once per frame
     void Update()
     {
-        //GetPlayerName();
         inventory.playerName = name.text;      
     }
-
-    /*
-
-    public void GetPlayerName(InputField name)
-    {
-        inventory.playerName = name.text;
-    }
-    */
-
-
 }

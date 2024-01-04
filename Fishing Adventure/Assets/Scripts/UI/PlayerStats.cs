@@ -13,11 +13,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] TextMeshProUGUI totalEarnedText;
     [SerializeField] TextMeshProUGUI FishExcapedText;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         nameText.text = inventory.playerName;

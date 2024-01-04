@@ -7,12 +7,12 @@ public class FishingBar : MonoBehaviour
     [SerializeField] private Transform topPosition; // top pivot for fishing bar
     [SerializeField] private Transform bottomPosition; // bottom pivot of fishing bar
 
-    [SerializeField] private Transform fish; // fish icon 
+    [SerializeField] private Transform fish; 
 
     [SerializeField] private float timeMultiply; // seconds it takes for fish to move again
     [SerializeField] private float smoothMotion; // smooth time
 
-    [SerializeField] private Transform hook; // hook
+    [SerializeField] private Transform hook; 
     [SerializeField] public float hookSize; // size of the hook area. Larger area increases chance of catching
     public float hookStrength; // strength of the hook. Higher the strength the earier it is to catch fish
 
@@ -20,7 +20,7 @@ public class FishingBar : MonoBehaviour
     [SerializeField] public float gravityPull; // gravity of the hook
     [SerializeField] public float progressDropRate; // rate at which progress bar deteriates
 
-    [SerializeField] private float failTimer; // timer
+    [SerializeField] private float failTimer;
 
     [SerializeField] private SpriteRenderer hookSprite;
 
@@ -43,20 +43,16 @@ public class FishingBar : MonoBehaviour
     public bool currentlyFishing = false;
     private bool reelingSound = false;
 
-   public FishHolder fishManager;
-   public PlayerInventory inventoryStats;
-   private new AudioSource audio;
-   //private GameObject excapedText;
+    public FishHolder fishManager;
+    public PlayerInventory inventoryStats;
+    private new AudioSource audio;
 
 
     private void Start()
     {
-
-      //  anim = GetComponent<Animator>();
         holdTimer = failTimer;
         audio = GetComponent<AudioSource>();
         ChangeSize();
-        //currentlyFishing = true;
     }
     
     private void ChangeSize()
@@ -74,9 +70,7 @@ public class FishingBar : MonoBehaviour
         if (currentlyFishing && reelingSound == false)
         {
             reelingSound = true;
-            // Play reeling sound
             audio.Play();
-             
         }
     }
    
@@ -91,34 +85,26 @@ public class FishingBar : MonoBehaviour
         if (currentlyFishing)
         {
             fishManager.fishComplete = false;
-
-            //pause = false;
         }
         
         hookStrength = inventoryStats.HookStrength;
-
-       // inventoryStats.GetFishInfo(); // TEST 
-       //GetFishInfo(); // TEST
-       PlaySound();
-        
-                
+        PlaySound();            
     }
 
     public void Fishing()
     {
-        timer -= Time.deltaTime; // reduce time
-        currentlyFishing = true; // currently fishing
+        timer -= Time.deltaTime; 
+        currentlyFishing = true; 
 
-        if (timer < 0f) // if timer is still running
+        if (timer < 0f) 
         {
             timer = UnityEngine.Random.value * timeMultiply;
 
-            fishTowards = UnityEngine.Random.value; // get random area to move to
+            fishTowards = UnityEngine.Random.value; 
         }
 
         fishPosition = Mathf.SmoothDamp(fishPosition, fishTowards, ref fishSpeed, smoothMotion);
         fish.position = Vector3.Lerp(bottomPosition.position, topPosition.position, fishPosition);  // move fish randomly on the bar
-
     }
 
 
@@ -133,34 +119,33 @@ public class FishingBar : MonoBehaviour
 
         if (min < fishPosition && fishPosition < max)
         {
-            hookProgress += hookStrength * Time.deltaTime; // Increase progress 
+            hookProgress += hookStrength * Time.deltaTime; 
         }
 
         else
         {
-            hookProgress -= progressDropRate * Time.deltaTime; // Decrease progress
-            failTimer -= Time.deltaTime; // decrease failTimer
+            hookProgress -= progressDropRate * Time.deltaTime; 
+            failTimer -= Time.deltaTime; 
 
-            if (failTimer <= 0f) // if bar is empty after timer then fish excaped
+            if (failTimer <= 0f) 
             {
                 FishExcaped();
             }
         }
 
-        if (hookProgress >= 1f) // if bar is full then fish is caught
+        if (hookProgress >= 1f) 
         {
             FishCaught();
             Success();
         }
 
-        hookProgress = Mathf.Clamp(hookProgress, 0f, 1f); // clamp progress from 0 to 1
+        hookProgress = Mathf.Clamp(hookProgress, 0f, 1f); 
     }
 
 
     void Hook()
     {
-        // ADD: if holding phone screen button down...
-        if (Input.GetMouseButton(0)) // tap left click to move hook
+        if (Input.GetMouseButton(0)) 
         {
             hookPullVelocity += hookPullPower * Time.deltaTime;
         } 
@@ -189,97 +174,61 @@ public class FishingBar : MonoBehaviour
         {
             // +0% harder to catch
             progressDropRate = 0.1f;
-            timeMultiply = 7f; // 7 seconds
-            //failTimer = 8f;
+            timeMultiply = 7f;
         }
         else if (inventoryStats.displayFish[0].Rariety == "Uncommon")
         {
             // +15% harder to catch
-           // progressDropRate = 0.11f;
             progressDropRate = 0.115f;
-            timeMultiply = 6f; // 6 seconds
-            //failTimer = 8f;
+            timeMultiply = 6f; 
         }
         else if (inventoryStats.displayFish[0].Rariety == "Rare")
         {
             // +25% harder to catch
             progressDropRate = 0.125f;
-            timeMultiply = 5f; // 5 seconds
-            //failTimer = 8f;
+            timeMultiply = 5f; 
         }
         else if (inventoryStats.displayFish[0].Rariety == "Epic")
         {
             // +60% harder to catch
-            //progressDropRate = 0.15f;
             progressDropRate = 0.16f;
-            timeMultiply = 4f; // 4 seconds
-            //failTimer = 8f;
+            timeMultiply = 4f;
         }
         else if (inventoryStats.displayFish[0].Rariety == "Legendary")
         {
             // +100% harder to catch
-            //progressDropRate = 0.17f;
             progressDropRate = 0.2f;
-            timeMultiply = 3f; // 3 seconds
-            //failTimer = 8f;
-            
+            timeMultiply = 3f;          
         }
-        /*
-        else
-        {
-            Debug.Log("Error");
-            return;
-        }
-        */
-
     }
-
-
    
-    public void FishCaught() // Fish has been caught
+    public void FishCaught() 
     {
-        pause = true; // pause fishing bar
-        Debug.Log("FISH CAUGHT");
-        fishCaught = true; // fish has been caught
-        currentlyFishing = false; // stop fishing
+        pause = true; 
+        fishCaught = true; 
+        currentlyFishing = false; 
         fishManager.fishComplete = true;
-        hookProgress = 0f; // reset progress
-        failTimer = holdTimer; // reset timer
+        hookProgress = 0f; 
+        failTimer = holdTimer; 
         audio.Stop();
         reelingSound = false;
-
     }
 
-    public void FishExcaped() // Fish has excaped. // FIX: Not hiding fishing bar in build play!! 
+    public void FishExcaped()
     {
         pause = true;
-        Debug.Log("FISH EXCAPED");
         currentlyFishing = false;
-        inventoryStats.totalExcapes += 1; // add to excape inventory stat
-       // fishManager.stopFishing = true;
+        inventoryStats.totalExcapes += 1; 
         fishManager.fishComplete = true;
         hookProgress = 0f;
         failTimer = holdTimer;
         audio.Stop();
         reelingSound = false;
-       // gameObject.SetActive(false);
-       // StartCoroutine(FishAgain());
     }
 
     public bool Success()
     {
         return true;
     }
-
-    
-    /*
-    IEnumerator DecreaseTime()
-    {
-        yield return new WaitForSecounds(1f);
-        failTimer -= 1f;
-
-    }
-    */
-
 
 } 

@@ -11,25 +11,18 @@ public class Sell : MonoBehaviour
     public bool canSell;
     private new AudioSource audio;
     private bool finishedUpgrade = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         canSell = true;
         audio = GetComponent<AudioSource>();
-        
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        // if player clicks button at shop...
         if ((player.position - transform.position).magnitude < .4f && canSell)
         {
-            //audio.Play();
-         //   Debug.Log("Player is near");
-           // inventory.SellFish();
-            //canSell = false;
-
             if(inventory.fish[0] != null) // if inventroy is not already empty
             {
                 audio.Play();
@@ -37,7 +30,6 @@ public class Sell : MonoBehaviour
                 canSell = false;
 
             }
-           // display.UpdateInventoryDisplay();
             StartCoroutine(RefreshSells());
         }
 
@@ -45,9 +37,7 @@ public class Sell : MonoBehaviour
         {
             UpdateDock();
             finishedUpgrade = true;
-        }
-
-        
+        }       
     }
 
     public void UpdateDock()

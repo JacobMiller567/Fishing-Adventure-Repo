@@ -16,17 +16,15 @@ public class FishDisplay : MonoBehaviour
 
     public void ShowFish() // Display fish once it has been caught
     {
-        fishImage.sprite = inventory.displayFish[0].Icon; // Display fish sprite
-        nameText.text = inventory.displayFish[0].FishType; // Display fish name
-        rarietyText.text = inventory.displayFish[0].Rariety; // Display fish rariety
-        sellText.text = "$ " + inventory.displayFish[0].SellPrice; // Display fish sell price
-      //  sizeText.text = inventory.displayFish[0].FishLength;
-        sizeText.text = inventory.fishLengthHolder[inventory.count]; // Display fish size
-
+        fishImage.sprite = inventory.displayFish[0].Icon; 
+        nameText.text = inventory.displayFish[0].FishType; 
+        rarietyText.text = inventory.displayFish[0].Rariety; 
+        sellText.text = "$ " + inventory.displayFish[0].SellPrice;
+        sizeText.text = inventory.fishLengthHolder[inventory.count]; 
         StartCoroutine(HideDisplay());
     }
 
-    IEnumerator HideDisplay() // or player clicks "x" button 
+    IEnumerator HideDisplay()
     {
         yield return new WaitForSeconds(2.5f);
         gameObject.SetActive(false);

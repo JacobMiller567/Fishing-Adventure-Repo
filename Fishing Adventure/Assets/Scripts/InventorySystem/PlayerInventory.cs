@@ -7,14 +7,13 @@ using UnityEngine.UI;
 [CreateAssetMenu]
 public class PlayerInventory : ScriptableObject 
 {
-    public string playerName = "Player Name"; //InputField.GetComponent<InputField>().text;
+    public string playerName = "Player Name"; 
     public float playerMoney; 
     public float HookStrength;
     public float hookDepth = 5f;
-    public int maxFish = 5; // inventory size
-    public int count; // counter
+    public int maxFish = 5; 
+    public int count; 
     public bool inventoryFull = false;
-    //public bool upgradeStrength = false;
     
     // Upgrades //
     public float inventoryUpgradeCost = 75f;
@@ -27,7 +26,6 @@ public class PlayerInventory : ScriptableObject
     public int depthLevel = 0;
 
 
-//    public List<FishInstance> fishHolder = new List<FishInstance>(); // Not used!
     public Object[] fishFound; // Array that stores fish that is on the line
 
     public FishData[] displayFish; // Array that displays fish
@@ -39,14 +37,8 @@ public class PlayerInventory : ScriptableObject
     public bool[] fishJournal; // Stores true or false for if fish has been caught
     public FishData[] allFishJournal; // Stores all the fish in the game. Used to pull information from for journal
 
-
-//    public List<Object[]> testCaught = new List<Object[]>(); // Not used!
-//    public List<FishData> testFish = new List<FishData>(); // Not used!
-    //public InventoryDisplay display;
-   // FishData[] fishSave = new FishData[];
-
     // Quest System: //
-    public int CountFish; //Count caught fish
+    public int CountFish; 
     public bool QuestActive;
     public bool QuestComplete;
     public bool SpikedHook; // Quest reward that stops fish from taking bait
@@ -75,51 +67,32 @@ public class PlayerInventory : ScriptableObject
     public bool gameSound = true;
 
 
-   // public GameObject invetoryFullText;
-
-/*
-    private PlayerData MyData = new PlayerData(); // Test
-
-    public void Update()
-    {
-        MyData.playerMoney = playerMoney;
-        SaveGameManager.CurrentSaveData.PlayerData = MyData;
-    }
-*/
-
     public void AddFish()
     {
-        if (fish[maxFish - 1] != null)//&& fishLengthHolder[maxFish - 1] != null) // check if last slot has a fish
+        if (fish[maxFish - 1] != null)
         {
-            Debug.Log("Inventory Is FULL");
-          //  invetoryFullText.SetActive(true);
-            //inventoryFull = true;
             return;
         }
 
         for (int i = 0; i < maxFish; i++)
        {
 
-            if (fish[i] == null)// && fishLengthHolder[i] == null)
+            if (fish[i] == null)
             {
-               // fishList.Add(fishFound);
                 totalCatches += 1;
                 fishFound.CopyTo(fish, i);
                 count = i;
                 fish[i].isCaught = true; // Fish type has been recorded.
                 UpdateJournal(fish[i]);
 
-                if (fish[i].FishType == "Sea Spirit") // TEST FIXXXX
+                if (fish[i].FishType == "Sea Spirit")
                 {
                     if (PirateQuest == true)
                     {
-                        Debug.Log("Caught Legendary!!!!!!");
                         CaughtSpirit = true;
                     }
                 }
 
- // Store fish length in seperate array?
-// TEST //
                 float chooseSize = Random.Range(0, 100);
 
                 if (chooseSize >= 0 && chooseSize <= 4) // 5% fish is tiny
@@ -128,17 +101,11 @@ public class PlayerInventory : ScriptableObject
                 }
                 if (chooseSize >= 5 && chooseSize < 25) // 20% fish is small
                 {
-                    //displayFish[0].FishLength = "Small";
-                   // fish[i].FishLength = "Small";
                     fishLengthHolder[i] = "Small";
                 }
-                //else if
                 if (chooseSize >= 25 && chooseSize < 75) // 50% fish is average 
                 {
-                  //  displayFish[0].FishLength = "Average";
-                  //  fish[i].FishLength = "Average";
                     fishLengthHolder[i] = "Average";
-
                 }
                 if (chooseSize >= 75 && chooseSize < 95) // 20% fish is large 
                 {
@@ -147,8 +114,6 @@ public class PlayerInventory : ScriptableObject
                 }
                 if (chooseSize >= 95) // 5% fish is huge
                 {
-                   // displayFish[0].FishLength = "Large";
-                    //fish[i].FishLength = "Large"; 
                     fishLengthHolder[i] = "Huge";
                 }
 
@@ -158,9 +123,9 @@ public class PlayerInventory : ScriptableObject
 
         if (count <= maxFish) 
         {
-            fishFound.CopyTo(fish, count); // replace with i within a for loop
-            count += 1; // increase counter
-            if (count >= maxFish) // test
+            fishFound.CopyTo(fish, count); 
+            count += 1; 
+            if (count >= maxFish) 
             {
                 count = 0;
             }
@@ -170,105 +135,71 @@ public class PlayerInventory : ScriptableObject
 
     public void SellFish() 
     {
-        float profit = 0; // initial profit is 0
-       // invetoryFullText.SetActive(false);
-        //inventoryFull = false;
+        float profit = 0; 
 
         for (int i = 0; i < fish.Length; i++)
         {
             
-            if (fish[i] == null) // once inventory is empty then leave loop
+            if (fish[i] == null) 
             {
                 break;
             }
 
-            // TEST // Sell fish based on random length
             else if (fishLengthHolder[i] == "Tiny")
             {
-                Debug.Log(fish[i].FishType + ": Tiny"); // 25% less
+                Debug.Log(fish[i].FishType + ": Tiny"); 
                 profit += Mathf.Round(fish[i].SellPrice - (fish[i].SellPrice * 0.25f)); // subtract 25% from sell price
                 fish[i] = null;
                 fishLengthHolder[i] = null;
             }
             else if (fishLengthHolder[i] == "Small")
             {
-                Debug.Log(fish[i].FishType + ": Small"); // 15% less
+                Debug.Log(fish[i].FishType + ": Small"); 
                 profit += Mathf.Round(fish[i].SellPrice - (fish[i].SellPrice * 0.15f)); // subtract 15% from sell price
                 fish[i] = null;
                 fishLengthHolder[i] = null;
             }
             else if (fishLengthHolder[i] == "Large")
             {
-                Debug.Log(fish[i].FishType + ": Large"); // 15% more
-               // Debug.Log(fish[i].FishType +" "+ fish[i].FishLength);
+                Debug.Log(fish[i].FishType + ": Large"); 
                 profit += Mathf.Round(fish[i].SellPrice + (fish[i].SellPrice * 0.15f)); // add 15% more to sell price
                 fish[i] = null;
                 fishLengthHolder[i] = null;
             }
             else if (fishLengthHolder[i] == "Huge")
             {
-                Debug.Log(fish[i].FishType + ": Huge"); // 25% more
-               // Debug.Log(fish[i].FishType +" "+ fish[i].FishLength);
+                Debug.Log(fish[i].FishType + ": Huge"); 
                 profit += Mathf.Round(fish[i].SellPrice + (fish[i].SellPrice * 0.25f)); // add 25% more to sell price
                 fish[i] = null;
                 fishLengthHolder[i] = null;
             }
             else if (fishLengthHolder[i] == "Average")
             {
-                Debug.Log(fish[i].FishType + ": Average"); // 0% more
-               // Debug.Log(fish[i].FishType +" "+ fish[i].FishLength);
+                Debug.Log(fish[i].FishType + ": Average"); 
                 profit += fish[i].SellPrice; // add fish sell price
                 fish[i] = null;
                 fishLengthHolder[i] = null;
             }
-
-/*
-            float chooseSize = Random.Range(0, 5); // Show in add fish icon??
-            if (chooseSize == 0) // 20% fish is small
-            {
-                Debug.Log(fish[i].FishType + ": Small"); // 15% less
-              //  Debug.Log(fish[i].FishType +" "+fish[i].FishLength);
-                profit += Mathf.Round(fish[i].SellPrice - (fish[i].SellPrice * 0.15f)); // subtract 15% from sell price
-                fish[i] = null;
-            }
-            else if (chooseSize > 0 && chooseSize < 4) // 60% fish is average 
-            {
-                Debug.Log(fish[i].FishType + ": Average"); // 0% more
-               // Debug.Log(fish[i].FishType +" "+ fish[i].FishLength);
-                profit += fish[i].SellPrice; // add fish sell price
-                fish[i] = null;
-            }
-            else if (chooseSize == 4) // 20% fish is large
-            {
-                Debug.Log(fish[i].FishType + ": Large"); // 15% more
-               // Debug.Log(fish[i].FishType +" "+ fish[i].FishLength);
-                profit += Mathf.Round(fish[i].SellPrice + (fish[i].SellPrice * 0.15f)); // add 15% more to sell price
-                fish[i] = null;
-            }
-        // END TEST //
-*/
         }
-            playerMoney += profit; // add to players money
-            totalMoney += profit; // add to total earned
-            inventoryFull = false; // reset inventory to empty
-            count = 0; // reset count
+            playerMoney += profit;
+            totalMoney += profit; 
+            inventoryFull = false; 
+            count = 0; 
             return;
     }
 
     public void IncreaseInventory() // Increase inventory size
     {
-        // Copy values from inventory to new inventory
-        FishData[] fishSave = new FishData[maxFish - 5]; // set array to original size
+        FishData[] fishSave = new FishData[maxFish - 5];
 
-        System.Array.Copy(fish, fishSave, maxFish - 5); // store copy of fishing array into fishSave
+        System.Array.Copy(fish, fishSave, maxFish - 5); 
 
-        // Increase size of inventory
         fish = new FishData[maxFish];
 
         for (int i = 0; i < fishSave.Length; i++)
         {
-            fishSave.CopyTo(fish, i); // copy fish into inventory
-            if (fish[maxFish - 5] == null) // make new inventory slots null
+            fishSave.CopyTo(fish, i); 
+            if (fish[maxFish - 5] == null)
             {
                 break;
             }
@@ -284,12 +215,9 @@ public class PlayerInventory : ScriptableObject
             {
                 break;
             }
-
-         //  return fish[i].Icon; 
         }
 
         return fish[0].Icon;
-       // return fish[0].Icon;
     }
 
 
@@ -430,9 +358,6 @@ public class PlayerInventory : ScriptableObject
             Debug.Log("Fish Updated!!!");
             fishJournal[26] = true;
         }
-
-
-
     }
 
 
